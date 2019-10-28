@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/udcd_rect_roundcorner_bg">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/signup"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25dp"
+            android:textStyle="bold"></androidx.appcompat.widget.AppCompatTextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:background="@color/ErrorLightColor"
+            android:id="@+id/udlyt_errorlayout"
+            android:weightSum="10">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/udtv_errortext"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                android:text=""
+                android:layout_weight="1">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:id="@+id/udtv_error_closebutton"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                android:text="X"
+                android:layout_weight="9">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:inputType="textPersonName"
+                    android:maxLength="50"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="100"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/phone"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_phone_android_black_24dp"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/con_password"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_confirmpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+                    android:inputType="textPassword"
+                    android:maxLength="15"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pin"
+                    android:textColor="@color/colorPrimary">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <com.libizo.CustomEditText
+                    android:id="@+id/udet_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8px"
+                    android:drawableLeft="@drawable/ic_fiber_pin_black_24dp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textAlignment="textStart"
+                    android:textSize="13dp"
+                    app:libIZO_clearIconTint="@color/colorPrimaryDark"
+                    app:libIZO_setBorderColor="@color/colorPrimary"
+                    app:libIZO_setBorderView="true"
+                    app:libIZO_setClearIconVisible="true"
+                    app:libIZO_setCornerRadius="25dp"
+                    app:libIZO_setStrokeWidth="2dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            android:weightSum="2">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/udbtn_signup"
+                android:textColor="@color/primaryTextColor"
+                android:background="@drawable/udcd_rect_roundcorner_btn"
+                android:text="@string/sign_up">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/udbtn_cancel"
+                android:textColor="@color/primaryTextColor"
+                android:background="@drawable/udcd_rect_roundcorner_btn"
+                android:text="@string/cancel">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

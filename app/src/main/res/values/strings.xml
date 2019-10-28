@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">EasyBudjet</string>
+    <string name="app_version" translatable="false">1.0</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="user_name" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="login" translatable="false">Login</string>
+
+    <string name="signup" translatable="false"><u>Sign up</u></string>
+    <string name="name" translatable="false">Name</string>
+    <string name="email" translatable="false">Email ID</string>
+    <string name="con_password" translatable="false">Confirm Password</string>
+    <string name="pin" translatable="false">PIN</string>
+    <string name="phone" translatable="false">Phone</string>
+
+    <string name="sign_up" translatable="false">Signup</string>
+    <string name="cancel" translatable="false">Cancel</string>
+
+    <string name="forgot_pass" translatable="false">Forgot your password?</string>
+    <string name="dont_have_acc" translatable="false">Don\'t have an account? <u>Sign up</u></string>
+</resources>
