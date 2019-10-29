@@ -22,9 +22,11 @@ import DataLayer.data_lyr_login;
 import Model_Packages.udm_login;
 
 public class uda_login extends AppCompatActivity {
+    final AppCompatActivity udo_current_activity = uda_login.this;
     private Context context = this;
     private data_lyr_DB_Initialize DB_Initialixer;
     private data_lyr_login dbhelper_login;
+    private udjc_core udm_core = new udjc_core();
     AppCompatTextView udtv_signup;
     CustomEditText udet_userid;
     CustomEditText udet_password;
@@ -54,12 +56,20 @@ public class uda_login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(udet_userid.getText().toString())) {
-
+                    udm_core.udf_ShowAlert("Easy Budjet","Username Can not Empty",udo_current_activity);
                 }else if (TextUtils.isEmpty(udet_password.getText().toString())) {
-
+                    udm_core.udf_ShowAlert("Easy Budjet","Password Can not Empty",udo_current_activity);
                 }else{
                     udo_username = udet_userid.getText().toString();
                     udo_password = udet_password.getText().toString();
+
+                    Boolean is_ValidateUser = dbhelper_login.udf_ValidateUser(udo_username,udo_password);
+                    if(is_ValidateUser){
+                        Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
             }

@@ -2,6 +2,7 @@ package DataLayer;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -52,6 +53,34 @@ public class data_lyr_login extends SQLiteOpenHelper {
             e.printStackTrace();
             db.close();
             return false;
+        }
+    }
+
+    public Boolean udf_ValidateUser(String user_id,String password){
+        String udv_password_db = "";
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM eb_login WHERE email='"+ user_id +"' LIMIT 1";
+        Cursor cursor = db.rawQuery(query, null);
+        long udoTempCount=cursor.getCount();
+        if (udoTempCount>0)
+        {//then there is a data
+            cursor.moveToFirst();
+            udv_password_db = cursor.getString(cursor.getColumnIndex("password"));
+
+        }
+        else{
+            return false;
+        }
+        db.close();
+        try {
+            if (udv_password_db.equals(password)){
+                return  true;
+            }else {
+                return  false;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  false;
         }
     }
 }
