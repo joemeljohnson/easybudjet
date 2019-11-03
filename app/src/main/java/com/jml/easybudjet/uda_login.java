@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -66,6 +67,8 @@ public class uda_login extends AppCompatActivity {
                     Boolean is_ValidateUser = dbhelper_login.udf_ValidateUser(udo_username,udo_password);
                     if(is_ValidateUser){
                         Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(),uda_home.class);
+                        startActivity(i);
                     }else {
                         Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
                     }
